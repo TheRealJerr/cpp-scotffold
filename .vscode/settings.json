@@ -72,6 +72,9 @@
         "list": "cpp",
         "regex": "cpp",
         "source_location": "cpp",
-        "typeindex": "cpp"
+        "typeindex": "cpp",
+        "stdio.h": "c",
+        "hash_map": "cpp",
+        "hash_set": "cpp"
     }
 }
