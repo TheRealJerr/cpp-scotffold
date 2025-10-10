@@ -20,11 +20,13 @@
 
 这个项目使用cmake作为构建系统，依赖管理使用cmake的find_package命令。
 
-## 目录结构 ./source
+## 目录结构 
 
-- json.h : 
+- source/json.h : 
     实现基于jsoncpp的json序列化和反序列化
-- log.h : 
+- source/log.h : 
     实现基于spdlog的日志系统, 使得可以使用glibc++中的`__FILE`和`__LINE__`宏
-- command.h
+- source/command.h
     封装了常见的参数的信息, 包括全局日志器的启动选项, 以及命令行参数的解析
+- example
+    示例代码, 包括一个简单的http服务器, 一个简单的websocket服务器, 以及一个简单的mysql客户端
