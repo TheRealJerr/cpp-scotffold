@@ -23,6 +23,9 @@ public:
         std::cout << "Method: " << brpc::HttpMethod2Str(headers.method()) << std::endl;
         std::cout << "Path: " << cntl->request_attachment().to_string() << std::endl;
 
+        cntl->response_attachment().append("Hello World from HTTP!");
+        cntl->http_response().set_content_type("text/plain");
+        cntl->http_response().set_status_code(200);
 
     }
 
@@ -53,6 +56,8 @@ int main()
     
     brpc::ServerOptions options;
 
+    
+
     options.idle_timeout_sec = -1;
     
     brpc::Server server;
@@ -61,6 +66,7 @@ int main()
     if(ret == -1)
     {
         std::cout << "Add Service Failed" << std::endl;
+    
         return -1;
     }
 
@@ -74,8 +80,6 @@ int main()
     
     server.RunUntilAskedToQuit();
 
-    return 0;
-    
 
     return 0;
 }

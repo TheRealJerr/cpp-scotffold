@@ -14,10 +14,10 @@ int main(){
     channel.Init("192.168.124.148:9000", &options);   
 
     brpc::Controller cntl;
-    auto http_request = cntl.http_request();
+    auto& http_request = cntl.http_request();
     http_request.set_method(brpc::HTTP_METHOD_POST);
     // 设置请求的urln
-    http_request.uri().set_path("/Hello");
+    http_request.uri().set_path("/CaculateService/Hello");
     
     cntl.request_attachment().append("hello world");
 
