@@ -48,7 +48,7 @@ struct TableStruct_caculate_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[2]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[4]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -62,10 +62,18 @@ extern AddRequestDefaultTypeInternal _AddRequest_default_instance_;
 class AddResponse;
 class AddResponseDefaultTypeInternal;
 extern AddResponseDefaultTypeInternal _AddResponse_default_instance_;
+class HelloRequest;
+class HelloRequestDefaultTypeInternal;
+extern HelloRequestDefaultTypeInternal _HelloRequest_default_instance_;
+class HelloResponse;
+class HelloResponseDefaultTypeInternal;
+extern HelloResponseDefaultTypeInternal _HelloResponse_default_instance_;
 }  // namespace caculate
 PROTOBUF_NAMESPACE_OPEN
 template<> ::caculate::AddRequest* Arena::CreateMaybeMessage<::caculate::AddRequest>(Arena*);
 template<> ::caculate::AddResponse* Arena::CreateMaybeMessage<::caculate::AddResponse>(Arena*);
+template<> ::caculate::HelloRequest* Arena::CreateMaybeMessage<::caculate::HelloRequest>(Arena*);
+template<> ::caculate::HelloResponse* Arena::CreateMaybeMessage<::caculate::HelloResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace caculate {
 
@@ -354,6 +362,254 @@ class AddResponse PROTOBUF_FINAL :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_caculate_2eproto;
 };
+// -------------------------------------------------------------------
+
+class HelloRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:caculate.HelloRequest) */ {
+ public:
+  inline HelloRequest() : HelloRequest(nullptr) {};
+  virtual ~HelloRequest();
+
+  HelloRequest(const HelloRequest& from);
+  HelloRequest(HelloRequest&& from) noexcept
+    : HelloRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline HelloRequest& operator=(const HelloRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline HelloRequest& operator=(HelloRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const HelloRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const HelloRequest* internal_default_instance() {
+    return reinterpret_cast<const HelloRequest*>(
+               &_HelloRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(HelloRequest& a, HelloRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(HelloRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(HelloRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline HelloRequest* New() const final {
+    return CreateMaybeMessage<HelloRequest>(nullptr);
+  }
+
+  HelloRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<HelloRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const HelloRequest& from);
+  void MergeFrom(const HelloRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(HelloRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "caculate.HelloRequest";
+  }
+  protected:
+  explicit HelloRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_caculate_2eproto);
+    return ::descriptor_table_caculate_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:caculate.HelloRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_caculate_2eproto;
+};
+// -------------------------------------------------------------------
+
+class HelloResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:caculate.HelloResponse) */ {
+ public:
+  inline HelloResponse() : HelloResponse(nullptr) {};
+  virtual ~HelloResponse();
+
+  HelloResponse(const HelloResponse& from);
+  HelloResponse(HelloResponse&& from) noexcept
+    : HelloResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline HelloResponse& operator=(const HelloResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline HelloResponse& operator=(HelloResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const HelloResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const HelloResponse* internal_default_instance() {
+    return reinterpret_cast<const HelloResponse*>(
+               &_HelloResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  friend void swap(HelloResponse& a, HelloResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(HelloResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(HelloResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline HelloResponse* New() const final {
+    return CreateMaybeMessage<HelloResponse>(nullptr);
+  }
+
+  HelloResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<HelloResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const HelloResponse& from);
+  void MergeFrom(const HelloResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(HelloResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "caculate.HelloResponse";
+  }
+  protected:
+  explicit HelloResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_caculate_2eproto);
+    return ::descriptor_table_caculate_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:caculate.HelloResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_caculate_2eproto;
+};
 // ===================================================================
 
 class CaculateService_Stub;
@@ -372,6 +628,10 @@ class CaculateService : public ::PROTOBUF_NAMESPACE_ID::Service {
   virtual void Add(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                        const ::caculate::AddRequest* request,
                        ::caculate::AddResponse* response,
+                       ::google::protobuf::Closure* done);
+  virtual void Hello(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::caculate::HelloRequest* request,
+                       ::caculate::HelloResponse* response,
                        ::google::protobuf::Closure* done);
 
   // implements Service ----------------------------------------------
@@ -405,6 +665,10 @@ class CaculateService_Stub : public CaculateService {
   void Add(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                        const ::caculate::AddRequest* request,
                        ::caculate::AddResponse* response,
+                       ::google::protobuf::Closure* done);
+  void Hello(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::caculate::HelloRequest* request,
+                       ::caculate::HelloResponse* response,
                        ::google::protobuf::Closure* done);
  private:
   ::PROTOBUF_NAMESPACE_ID::RpcChannel* channel_;
@@ -488,9 +752,21 @@ inline void AddResponse::set_result(::PROTOBUF_NAMESPACE_ID::int32 value) {
   // @@protoc_insertion_point(field_set:caculate.AddResponse.result)
 }
 
+// -------------------------------------------------------------------
+
+// HelloRequest
+
+// -------------------------------------------------------------------
+
+// HelloResponse
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 
