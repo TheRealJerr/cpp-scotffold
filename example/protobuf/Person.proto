@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package example;
+
+// 启动rpc服务
+option cc_generic_services = true;
+
+// 针对性别进行枚举a
+enum Gender {
+    male = 0;
+    female = 1;
+    other = 2;
+}
+
+// 定义Person结构体
+message Person{
+    int32 id = 1;
+    string name = 2;
+    int32 age = 3;
+    Gender gender = 4;
+    repeated float scores = 5;
+    map<string, string> tags = 6;
+}
+
+message PersonRequest{
+    int32 id = 1;
+}
+
+message PersonResponse{
+    bool success = 1;
+    Person person = 2;
+}
+
+service PersonService{
+    rpc getPerson(PersonRequest) returns (PersonResponse);
+}
+
+
+

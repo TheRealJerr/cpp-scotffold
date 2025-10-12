@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package caculate;
+
+// 启动rpc服务
+option cc_generic_services = true;
+
+message AddRequest
+{
+    int32 num1 = 1;
+    int32 num2 = 2;
+}
+
+message AddResponse
+{
+    int32 result = 1;
+}
+
+message HelloRequest
+{
+
+}
+
+message HelloResponse
+{
+
+}
+
+service CaculateService
+{
+    rpc Add(AddRequest) returns (AddResponse);
+    rpc Hello(HelloRequest) returns (HelloResponse);
+}

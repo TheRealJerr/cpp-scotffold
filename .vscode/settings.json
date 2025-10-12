@@ -61,18 +61,20 @@
         "semaphore": "cpp",
         "stop_token": "cpp",
         "thread": "cpp",
-        "hash_map": "cpp",
-        "hash_set": "cpp",
-        "bitset": "cpp",
-        "list": "cpp",
+        "fstream": "cpp",
+        "*.inc": "cpp",
         "unordered_set": "cpp",
         "csignal": "cpp",
+        "bitset": "cpp",
         "codecvt": "cpp",
         "complex": "cpp",
         "coroutine": "cpp",
+        "list": "cpp",
         "regex": "cpp",
         "source_location": "cpp",
-        "fstream": "cpp",
-        "typeindex": "cpp"
+        "typeindex": "cpp",
+        "stdio.h": "c",
+        "hash_map": "cpp",
+        "hash_set": "cpp"
     }
 }
