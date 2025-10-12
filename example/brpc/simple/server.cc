@@ -1,8 +1,9 @@
-
 #include <brpc/server.h>
 #include <brpc/log.h>
 #include <butil/logging.h>
 #include "caculate.pb.h"
+#include <thread>
+#include "rigistry.h"
 
 using namespace caculate;
 
@@ -16,11 +17,15 @@ public:
                     AddResponse* response,
                     google::protobuf::Closure* done) override
     {
-        brpc::ClosureGuard done_guard(done);
+        std::thread([=](){
+            brpc::ClosureGuard done_guard(done);
 
-        int result = request->num1() + request->num2();
+            int result = request->num1() + request->num2();
 
-        response->set_result(result);
+            response->set_result(result);
+
+            std::cout << "caculate finished" << std::endl;
+        }).detach();
 
     }
 };
@@ -33,30 +38,13 @@ int main()
         2. 实例化Server对象
         3. 注册对应的服务
     */
-    CaculateServiceImpl service;
+    CaculateServiceImpl *service = new CaculateServiceImpl();
     
-    brpc::ServerOptions options;
-
-    options.idle_timeout_sec = -1;
     
-    brpc::Server server;
-
-    int ret = server.AddService(&service, brpc::SERVER_DOESNT_OWN_SERVICE);
-    if(ret == -1)
-    {
-        std::cout << "Add Service Failed" << std::endl;
-        return -1;
-    }
-
-    ret = server.Start(9000, &options);
-
-    if(ret == -1)
-    {
-        std::cout << "Start Server Failed" << std::endl;
-        return -1;
-    }
+    auto server = RpcTools::RpcServerFactory::create_server(service, 9000);
     
-    server.RunUntilAskedToQuit();
+    
+    server->RunUntilAskedToQuit();
 
     return 0;
 }

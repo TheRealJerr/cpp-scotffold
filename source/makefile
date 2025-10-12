@@ -1,12 +1,14 @@
-src=main.cpp log.cpp
-obj=$(src:.cpp=.o)
+all : server1 server2 rigister
 
-all: $(obj)
-	g++ -o main $(obj) -lspdlog -lpthread -lgflags -lfmt -ljsoncpp -std=c++17
+server1 : server1.cc caculate.pb.cc
+	g++ -o $@ $^ -lprotobuf -lbrpc -lpthread -lleveldb -ldl -std=c++17 -lssl -lcrypto -lgflags -lspdlog -lfmt
 
-%.o: %.cpp
- 	g++ -c $< -o $@ -lspdlog -lpthread -lgflags -lfmt -ljsoncpp s-std=c++17
+server2 : server2.cc caculate.pb.cc
+	g++ -o $@ $^ -lprotobuf -lbrpc -lpthread -lleveldb -ldl -std=c++17 -lssl -lcrypto -lgflags -lspdlog -lfmt
 
-.PHONY: clean
-clean:
-	rm -f $(obj) main
+rigister : rigistryServer.cc caculate.pb.cc rigistry.cpp log.cpp
+	g++ -o $@ $^ -lprotobuf -lbrpc -lpthread -lleveldb -ldl -std=c++17 -lssl -lcrypto -lgflags -lspdlog -lfmt
+
+.PHONY : clean
+clean :
+	rm -f server1 server2 rigister
