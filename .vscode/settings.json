@@ -75,6 +75,7 @@
         "typeindex": "cpp",
         "stdio.h": "c",
         "hash_map": "cpp",
-        "hash_set": "cpp"
+        "hash_set": "cpp",
+        "cerrno": "cpp"
     }
 }

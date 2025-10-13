@@ -46,8 +46,8 @@ void test_rpc_rigistry()
     google::protobuf::Closure* done = CreateClosureFactory::create_closure(test_on_msg_hdl, cntl, &rsp);
     brpc::ClosureGuard done_guard(done);
     // 创建Stub对象
-    CaculateService_Stub stub(channel.get());
-
+    caculate::CaculateService_Stub stub(channel.get());
+    
     stub.Add(cntl, &req, &rsp, done);
 
     // 等待回调函数执行
