@@ -63,4 +63,25 @@ namespace Tools
 
         return true;
     }
+
+    std::vector<std::string> StringTools::split(const std::string& str, 
+            const std::string& sep)
+    {
+        size_t pos = 0, idx = 0;
+        std::vector<std::string> res;
+        while ((pos = str.find(sep, pos)) != std::string::npos)
+        {
+            // 1,2,3,4,,保证空字符串不会添加进入res中
+            if(pos != idx) res.push_back(str.substr(idx, pos - idx));
+            idx = pos + sep.size();
+            pos = idx;
+        }
+        res.push_back(str.substr(idx));
+        return res;
+    }
+    bool StringTools::regex_match(const std::string& str, const std::string& pattern)
+    {
+        return std::regex_match(str, std::regex(pattern));
+    }
+    
 }

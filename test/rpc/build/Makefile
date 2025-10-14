@@ -177,6 +177,30 @@ src/Server.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rpc.dir/build.make CMakeFiles/rpc.dir/src/Server.cpp.s
 .PHONY : src/Server.cpp.s
 
+src/command.o: src/command.cpp.o
+.PHONY : src/command.o
+
+# target to build an object file
+src/command.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rpc.dir/build.make CMakeFiles/rpc.dir/src/command.cpp.o
+.PHONY : src/command.cpp.o
+
+src/command.i: src/command.cpp.i
+.PHONY : src/command.i
+
+# target to preprocess a source file
+src/command.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rpc.dir/build.make CMakeFiles/rpc.dir/src/command.cpp.i
+.PHONY : src/command.cpp.i
+
+src/command.s: src/command.cpp.s
+.PHONY : src/command.s
+
+# target to generate assembly for a file
+src/command.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rpc.dir/build.make CMakeFiles/rpc.dir/src/command.cpp.s
+.PHONY : src/command.cpp.s
+
 src/concrete_events.o: src/concrete_events.cpp.o
 .PHONY : src/concrete_events.o
 
@@ -273,6 +297,30 @@ src/log.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rpc.dir/build.make CMakeFiles/rpc.dir/src/log.cpp.s
 .PHONY : src/log.cpp.s
 
+src/main.o: src/main.cpp.o
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rpc.dir/build.make CMakeFiles/rpc.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rpc.dir/build.make CMakeFiles/rpc.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rpc.dir/build.make CMakeFiles/rpc.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
 src/reactor.o: src/reactor.cpp.o
 .PHONY : src/reactor.o
 
@@ -312,6 +360,9 @@ help:
 	@echo "... src/Server.o"
 	@echo "... src/Server.i"
 	@echo "... src/Server.s"
+	@echo "... src/command.o"
+	@echo "... src/command.i"
+	@echo "... src/command.s"
 	@echo "... src/concrete_events.o"
 	@echo "... src/concrete_events.i"
 	@echo "... src/concrete_events.s"
@@ -324,6 +375,9 @@ help:
 	@echo "... src/log.o"
 	@echo "... src/log.i"
 	@echo "... src/log.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 	@echo "... src/reactor.o"
 	@echo "... src/reactor.i"
 	@echo "... src/reactor.s"

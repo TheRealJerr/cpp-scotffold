@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD 17)
 include_directories(include)
 
 # 这里修改一下, 应该是src/*cpp
-file(GLOB_RECURSE SOURCES src/*.cpp)
+file(GLOB_RECURSE SOURCES src/*.cpp src/*.cc)
 
 add_executable(rpc ${SOURCES})
 

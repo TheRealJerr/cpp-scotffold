@@ -8,6 +8,9 @@
 #include <sys/timerfd.h>
 #include <cstring>
 #include <iostream>
+#include <arpa/inet.h>
+#include <fcntl.h>
+#include <errno.h>
 #include "command.h"
 #include "../include/log.h"
 #include "../include/Buffer.h"
@@ -18,34 +21,36 @@ using namespace Tools;
 bool Server::_bind_and_listen(int port)
 {
     // 创建服务器 socket
-        server_fd_ = socket(AF_INET, SOCK_STREAM | SOCK_NONBLOCK, 0);
-        if (server_fd_ == -1) {
-            ERR("Failed to create socket");
-            return false;
-        }
-        
-        // 设置 SO_REUSEADDR
-        int opt = 1;
-        setsockopt(server_fd_, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt));
-        
-        // 绑定地址
-        sockaddr_in addr{};
-        addr.sin_family = AF_INET;
-        addr.sin_addr.s_addr = INADDR_ANY;
-        addr.sin_port = htons(port);
-        
-        if (bind(server_fd_, (sockaddr*)&addr, sizeof(addr)) == -1) {
-            ERR("Failed to bind: {}", strerror(errno));
-            close(server_fd_);
-            return false;
-        }
-        
-        // 监听
-        if (listen(server_fd_, 128) == -1) {
-            ERR("Failed to listen: {}", strerror(errno));
-            close(server_fd_);
-            return false;
-        }
+    server_fd_ = socket(AF_INET, SOCK_STREAM | SOCK_NONBLOCK, 0);
+    if (server_fd_ == -1) {
+        ERR("Failed to create socket");
+        return false;
+    }
+    
+    // 设置 SO_REUSEADDR
+    int opt = 1;
+    setsockopt(server_fd_, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt));
+    
+    // 绑定地址
+    sockaddr_in addr{};
+    addr.sin_family = AF_INET;
+    addr.sin_addr.s_addr = INADDR_ANY;
+    addr.sin_port = htons(port);
+    
+    if (bind(server_fd_, (sockaddr*)&addr, sizeof(addr)) == -1) {
+        ERR("Failed to bind: {}", strerror(errno));
+        close(server_fd_);
+        return false;
+    }
+    
+    // 监听
+    if (listen(server_fd_, 128) == -1) {
+        ERR("Failed to listen: {}", strerror(errno));
+        close(server_fd_);
+        return false;
+    }
+
+    return true;
 }
 
 bool Server::start(int port)
@@ -83,17 +88,19 @@ void Server::handleAccept(int fd, EventType type) {
     
     int client_fd = accept4(fd, (sockaddr*)&client_addr, &addr_len, SOCK_NONBLOCK);
     if (client_fd == -1) {
-        std::cerr << "Accept failed" << std::endl;
+        ERR("Failed to accept client: {}", strerror(errno));
         return;
     }
     
-    std::cout << "New client connected: " << client_fd << std::endl;
-    
+    INF("New client connected: ip : {}, port : {}", inet_ntoa(client_addr.sin_addr), ntohs(client_addr.sin_port));
+    const std::string& ip = inet_ntoa(client_addr.sin_addr);
+    const int port = ntohs(client_addr.sin_port);
+    on_connect_callback_(client_fd, ip, port);
     // 为客户端注册读事件
     auto client_event = std::make_shared<IOEvent>(
         client_fd,
         EventType::READ | EventType::EDGE_TRIGGER,
-        [this](int client_fd, EventType type) { handleClientData(client_fd, type); }
+        [this, self = shared_from_this()](int client_fd, EventType type) { handleClientData(client_fd, type); }
     );
     
     reactor_.registerEvent(client_event);
@@ -113,14 +120,11 @@ void Server::handleClientData(int client_fd, EventType type) {
         
     }
     // 回显数据
-    std::string data = recv_buffer->readAllString();
-    std::cout << "Received data: " << data << std::endl;
-    
     // 创建发送缓冲区
     buffer_ptr send_buffer = BufferFactory::create();
-    const std::string http_html_response = "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n<html><body>Hello, world!</body></html>";
-    send_buffer->append(http_html_response.c_str(), http_html_response.size());
 
+    // 调用处理的回调函数
+    on_msg_callback_(client_fd, recv_buffer, send_buffer);
     
     if (bytes_read == 0 || (bytes_read == -1 && errno != EAGAIN)) {
         // 客户端断开或错误

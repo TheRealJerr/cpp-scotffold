@@ -2,7 +2,7 @@
 
 namespace Tools
 {
-    std::shared_ptr<spdlog::logger> g_logger;
+    inline std::shared_ptr<spdlog::logger> g_logger;
 
     void init_log(const log_config& config)
     {

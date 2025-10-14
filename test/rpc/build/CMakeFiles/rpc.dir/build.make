@@ -97,10 +97,24 @@ CMakeFiles/rpc.dir/src/Server.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rpc.dir/src/Server.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dev/workspace/test/rpc/src/Server.cpp -o CMakeFiles/rpc.dir/src/Server.cpp.s
 
+CMakeFiles/rpc.dir/src/command.cpp.o: CMakeFiles/rpc.dir/flags.make
+CMakeFiles/rpc.dir/src/command.cpp.o: ../src/command.cpp
+CMakeFiles/rpc.dir/src/command.cpp.o: CMakeFiles/rpc.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dev/workspace/test/rpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/rpc.dir/src/command.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rpc.dir/src/command.cpp.o -MF CMakeFiles/rpc.dir/src/command.cpp.o.d -o CMakeFiles/rpc.dir/src/command.cpp.o -c /home/dev/workspace/test/rpc/src/command.cpp
+
+CMakeFiles/rpc.dir/src/command.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rpc.dir/src/command.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dev/workspace/test/rpc/src/command.cpp > CMakeFiles/rpc.dir/src/command.cpp.i
+
+CMakeFiles/rpc.dir/src/command.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rpc.dir/src/command.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dev/workspace/test/rpc/src/command.cpp -o CMakeFiles/rpc.dir/src/command.cpp.s
+
 CMakeFiles/rpc.dir/src/concrete_events.cpp.o: CMakeFiles/rpc.dir/flags.make
 CMakeFiles/rpc.dir/src/concrete_events.cpp.o: ../src/concrete_events.cpp
 CMakeFiles/rpc.dir/src/concrete_events.cpp.o: CMakeFiles/rpc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dev/workspace/test/rpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/rpc.dir/src/concrete_events.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dev/workspace/test/rpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/rpc.dir/src/concrete_events.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rpc.dir/src/concrete_events.cpp.o -MF CMakeFiles/rpc.dir/src/concrete_events.cpp.o.d -o CMakeFiles/rpc.dir/src/concrete_events.cpp.o -c /home/dev/workspace/test/rpc/src/concrete_events.cpp
 
 CMakeFiles/rpc.dir/src/concrete_events.cpp.i: cmake_force
@@ -114,7 +128,7 @@ CMakeFiles/rpc.dir/src/concrete_events.cpp.s: cmake_force
 CMakeFiles/rpc.dir/src/epoll_dispatcher.cpp.o: CMakeFiles/rpc.dir/flags.make
 CMakeFiles/rpc.dir/src/epoll_dispatcher.cpp.o: ../src/epoll_dispatcher.cpp
 CMakeFiles/rpc.dir/src/epoll_dispatcher.cpp.o: CMakeFiles/rpc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dev/workspace/test/rpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/rpc.dir/src/epoll_dispatcher.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dev/workspace/test/rpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/rpc.dir/src/epoll_dispatcher.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rpc.dir/src/epoll_dispatcher.cpp.o -MF CMakeFiles/rpc.dir/src/epoll_dispatcher.cpp.o.d -o CMakeFiles/rpc.dir/src/epoll_dispatcher.cpp.o -c /home/dev/workspace/test/rpc/src/epoll_dispatcher.cpp
 
 CMakeFiles/rpc.dir/src/epoll_dispatcher.cpp.i: cmake_force
@@ -128,7 +142,7 @@ CMakeFiles/rpc.dir/src/epoll_dispatcher.cpp.s: cmake_force
 CMakeFiles/rpc.dir/src/epoll_event.cpp.o: CMakeFiles/rpc.dir/flags.make
 CMakeFiles/rpc.dir/src/epoll_event.cpp.o: ../src/epoll_event.cpp
 CMakeFiles/rpc.dir/src/epoll_event.cpp.o: CMakeFiles/rpc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dev/workspace/test/rpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/rpc.dir/src/epoll_event.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dev/workspace/test/rpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/rpc.dir/src/epoll_event.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rpc.dir/src/epoll_event.cpp.o -MF CMakeFiles/rpc.dir/src/epoll_event.cpp.o.d -o CMakeFiles/rpc.dir/src/epoll_event.cpp.o -c /home/dev/workspace/test/rpc/src/epoll_event.cpp
 
 CMakeFiles/rpc.dir/src/epoll_event.cpp.i: cmake_force
@@ -142,7 +156,7 @@ CMakeFiles/rpc.dir/src/epoll_event.cpp.s: cmake_force
 CMakeFiles/rpc.dir/src/log.cpp.o: CMakeFiles/rpc.dir/flags.make
 CMakeFiles/rpc.dir/src/log.cpp.o: ../src/log.cpp
 CMakeFiles/rpc.dir/src/log.cpp.o: CMakeFiles/rpc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dev/workspace/test/rpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/rpc.dir/src/log.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dev/workspace/test/rpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/rpc.dir/src/log.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rpc.dir/src/log.cpp.o -MF CMakeFiles/rpc.dir/src/log.cpp.o.d -o CMakeFiles/rpc.dir/src/log.cpp.o -c /home/dev/workspace/test/rpc/src/log.cpp
 
 CMakeFiles/rpc.dir/src/log.cpp.i: cmake_force
@@ -153,10 +167,24 @@ CMakeFiles/rpc.dir/src/log.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rpc.dir/src/log.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dev/workspace/test/rpc/src/log.cpp -o CMakeFiles/rpc.dir/src/log.cpp.s
 
+CMakeFiles/rpc.dir/src/main.cpp.o: CMakeFiles/rpc.dir/flags.make
+CMakeFiles/rpc.dir/src/main.cpp.o: ../src/main.cpp
+CMakeFiles/rpc.dir/src/main.cpp.o: CMakeFiles/rpc.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dev/workspace/test/rpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/rpc.dir/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rpc.dir/src/main.cpp.o -MF CMakeFiles/rpc.dir/src/main.cpp.o.d -o CMakeFiles/rpc.dir/src/main.cpp.o -c /home/dev/workspace/test/rpc/src/main.cpp
+
+CMakeFiles/rpc.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rpc.dir/src/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dev/workspace/test/rpc/src/main.cpp > CMakeFiles/rpc.dir/src/main.cpp.i
+
+CMakeFiles/rpc.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rpc.dir/src/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dev/workspace/test/rpc/src/main.cpp -o CMakeFiles/rpc.dir/src/main.cpp.s
+
 CMakeFiles/rpc.dir/src/reactor.cpp.o: CMakeFiles/rpc.dir/flags.make
 CMakeFiles/rpc.dir/src/reactor.cpp.o: ../src/reactor.cpp
 CMakeFiles/rpc.dir/src/reactor.cpp.o: CMakeFiles/rpc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dev/workspace/test/rpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/rpc.dir/src/reactor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dev/workspace/test/rpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/rpc.dir/src/reactor.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rpc.dir/src/reactor.cpp.o -MF CMakeFiles/rpc.dir/src/reactor.cpp.o.d -o CMakeFiles/rpc.dir/src/reactor.cpp.o -c /home/dev/workspace/test/rpc/src/reactor.cpp
 
 CMakeFiles/rpc.dir/src/reactor.cpp.i: cmake_force
@@ -171,10 +199,12 @@ CMakeFiles/rpc.dir/src/reactor.cpp.s: cmake_force
 rpc_OBJECTS = \
 "CMakeFiles/rpc.dir/src/Buffer.cpp.o" \
 "CMakeFiles/rpc.dir/src/Server.cpp.o" \
+"CMakeFiles/rpc.dir/src/command.cpp.o" \
 "CMakeFiles/rpc.dir/src/concrete_events.cpp.o" \
 "CMakeFiles/rpc.dir/src/epoll_dispatcher.cpp.o" \
 "CMakeFiles/rpc.dir/src/epoll_event.cpp.o" \
 "CMakeFiles/rpc.dir/src/log.cpp.o" \
+"CMakeFiles/rpc.dir/src/main.cpp.o" \
 "CMakeFiles/rpc.dir/src/reactor.cpp.o"
 
 # External object files for target rpc
@@ -182,17 +212,19 @@ rpc_EXTERNAL_OBJECTS =
 
 rpc: CMakeFiles/rpc.dir/src/Buffer.cpp.o
 rpc: CMakeFiles/rpc.dir/src/Server.cpp.o
+rpc: CMakeFiles/rpc.dir/src/command.cpp.o
 rpc: CMakeFiles/rpc.dir/src/concrete_events.cpp.o
 rpc: CMakeFiles/rpc.dir/src/epoll_dispatcher.cpp.o
 rpc: CMakeFiles/rpc.dir/src/epoll_event.cpp.o
 rpc: CMakeFiles/rpc.dir/src/log.cpp.o
+rpc: CMakeFiles/rpc.dir/src/main.cpp.o
 rpc: CMakeFiles/rpc.dir/src/reactor.cpp.o
 rpc: CMakeFiles/rpc.dir/build.make
 rpc: /usr/lib/x86_64-linux-gnu/libspdlog.so.1.9.2
 rpc: /usr/lib/x86_64-linux-gnu/libfmt.so.8.1.1
 rpc: /usr/lib/x86_64-linux-gnu/libgflags.so.2.2.2
 rpc: CMakeFiles/rpc.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/dev/workspace/test/rpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable rpc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/dev/workspace/test/rpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable rpc"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/rpc.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
