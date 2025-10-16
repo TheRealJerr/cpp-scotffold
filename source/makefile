@@ -12,3 +12,5 @@ rigister : rigistryServer.cc caculate.pb.cc rigistry.cpp log.cpp
 .PHONY : clean
 clean :
 	rm -f server1 server2 rigister
+
+	

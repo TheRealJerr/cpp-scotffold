@@ -77,5 +77,6 @@
         "hash_map": "cpp",
         "hash_set": "cpp",
         "cerrno": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "/home/dev/workspace/test/rpc"
 }
