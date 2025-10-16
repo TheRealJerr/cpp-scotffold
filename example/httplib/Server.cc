@@ -30,6 +30,8 @@ void hello_handler(const httplib::Request& req, httplib::Response& res)
 int main()
 {
     httplib::Server svr;
+    // 创建目录映射
+    svr.set_mount_point("/", "./wwwroot");
     // 注册GET请求的处理函数
     svr.Get("/hello", hello_handler);
     svr.listen("0.0.0.0", 9000);

@@ -1,0 +1,3 @@
+/home/dev/workspace/test/rpc/build/CMakeFiles/rpc.dir
+/home/dev/workspace/test/rpc/build/CMakeFiles/edit_cache.dir
+/home/dev/workspace/test/rpc/build/CMakeFiles/rebuild_cache.dir
