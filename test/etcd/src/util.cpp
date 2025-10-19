@@ -113,11 +113,13 @@ namespace Tools
         std::random_device rd;
         auto generate(rd());
         length = length > MIN_LENTH ? length - MIN_LENTH: length;
+
+        std::uniform_int_distribution<size_t> dist(0, use_str->size() - 1);
         for(int i = 0; i < length; i++)
         {
             // 利用美森旋转算法产生随机数
             
-            ssm << use_str->at(generate % use_str->size());
+            ssm << use_str->at(dist(rd));
         }
         if(length <= MIN_LENTH) return ssm.str();
 
@@ -125,7 +127,7 @@ namespace Tools
         static std::atomic<unsigned int> number_base{0};
         int num = number_base.fetch_add(1);
         
-        ssm << std::setw(4) << num;
+        ssm << std::setw(4) << std::setfill('0') << num;
         return ssm.str();
     }
 }
