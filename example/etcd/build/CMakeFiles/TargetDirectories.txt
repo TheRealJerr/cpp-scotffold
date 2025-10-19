@@ -1,0 +1,3 @@
+/home/dev/workspace/example/etcd/build/CMakeFiles/etcd_test.dir
+/home/dev/workspace/example/etcd/build/CMakeFiles/edit_cache.dir
+/home/dev/workspace/example/etcd/build/CMakeFiles/rebuild_cache.dir

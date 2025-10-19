@@ -1,0 +1,4 @@
+/home/dev/workspace/test/etcd/build/CMakeFiles/registry.dir
+/home/dev/workspace/test/etcd/build/CMakeFiles/discovery.dir
+/home/dev/workspace/test/etcd/build/CMakeFiles/edit_cache.dir
+/home/dev/workspace/test/etcd/build/CMakeFiles/rebuild_cache.dir
