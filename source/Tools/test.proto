@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package test;
+
+// 启动rpc服务
+option cc_generic_services = true;
+
+// 我们有两个rpc服务，一个是加法运算，一个是问候语。
+message AddRequest
+{
+    int32 num1 = 1;
+    int32 num2 = 2;
+}
+
+message AddResponse
+{
+    int32 result = 1;
+}
+
+message HelloRequest
+{
+
+}
+
+message HelloResponse
+{
+    string message = 1;
+}
+// 通过不同的微服务名称，我们可以调用不同的rpc服务。
+
+service Math
+{
+    rpc Add(AddRequest) returns (AddResponse) {}
+}
+
+service Greeting
+{
+    rpc Hello(HelloRequest) returns (HelloResponse) {}
+}
