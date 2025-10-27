@@ -32,6 +32,9 @@
 - source/hls.h
     基于hls协议, 实现对于ffmpeg的封装, 使得可以方便的进行hls流的处理
 - source/rigistry.h
-    针对brpc的channel信道管理进行封装, 通过注册中心的方式, 使得brpc的channel可以动态的进行管理
+    针对brpc的channel信道管理进行封装, 通过简单的接口直接获取信道 
 - source/redis.h
     - 通过redis++实现redis的连接池化技术
+- source/etcd.h
+    - 通过etcd实现了注册中心的作用0
+
