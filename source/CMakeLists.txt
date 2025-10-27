@@ -1,48 +1,24 @@
+# 帮我编译一个CMakeLists.txt的文件, 头文件在include/, 源文件在src/, 输出文件在bin, 链接spdlog, fmt库
+
 cmake_minimum_required(VERSION 3.10)
 
-project(test_etcd)
+project(test)
 
 set(CMAKE_CXX_STANDARD 17)
 
-# 包含头文件目录
 include_directories(include)
 
-# 查找公共的源文件（src目录下的文件）
-file(GLOB_RECURSE COMMON_SOURCES src/*.cpp src/*.cc)
+# 这里修改一下, 应该是src/*cpp
+file(GLOB_RECURSE SOURCES src/*.cpp src/*.cc)
 
-# 查找依赖库
+add_executable(test ${SOURCES})
+
 find_package(spdlog REQUIRED)
 find_package(fmt REQUIRED)
 find_package(gflags REQUIRED)
 
-# 设置输出目录
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+target_link_libraries(test spdlog::spdlog fmt::fmt pthread gflags)
 
-# 公共的链接库列表
-set(COMMON_LIBS 
-    spdlog::spdlog 
-    fmt::fmt 
-    pthread 
-    gflags 
-    avcodec 
-    avformat 
-    avutil 
-    swscale 
-    swresample 
-    jsoncpp 
-    etcd-cpp-api 
-    cpprest 
-    ssl 
-    crypto 
-    dl
-)
+set_target_properties(test PROPERTIES OUTPUT_NAME test)
 
-# 创建 registry 可执行程序
-add_executable(registry test/registry.cpp ${COMMON_SOURCES})
-target_link_libraries(registry ${COMMON_LIBS})
-set_target_properties(registry PROPERTIES OUTPUT_NAME registry)
-
-# 创建 discovery 可执行程序
-add_executable(discovery test/discovery.cpp ${COMMON_SOURCES})
-target_link_libraries(discovery ${COMMON_LIBS})
-set_target_properties(discovery PROPERTIES OUTPUT_NAME discovery)
+set(CMAKE_RUNTIME_OUTtestUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)

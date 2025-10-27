@@ -1,0 +1,1 @@
+clang++ CMakeFiles/cppcoro_demo.dir/src/main.cpp.o -o cppcoro_demo  /home/dev/vcpkg/installed/x64-linux/lib/libcppcoro.a 

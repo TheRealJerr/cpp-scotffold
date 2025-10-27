@@ -1,0 +1,3 @@
+/home/dev/workspace/example/cpp-core/build/CMakeFiles/cppcoro_demo.dir
+/home/dev/workspace/example/cpp-core/build/CMakeFiles/edit_cache.dir
+/home/dev/workspace/example/cpp-core/build/CMakeFiles/rebuild_cache.dir
